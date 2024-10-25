@@ -1,0 +1,17 @@
+25.10.2024
+Добрый день!
+
+В папке "dags" находятся два дага: "dag_stg.py", "dag_dwh.py".
+	"dag_stg.py" - выполняет копирование данных из источника "s3" с последующим наполнением таблиц в staging слой: "transactions", "currencies" данными.
+	"dag_dwh.py" - выполняет SQL запрос к таблицам "transactions", "currencies" и получившийся результат загружает в витрину "global_metrics".
+
+В папке "sql" находятся DDL запросы на создания необходимых таблиц и запрос наполнения (INSERT) таблицы:
+	"create_STV202406073__DWH.global_metrics.sql",
+	"create_STV202406073__STAGING_currencies.sql",
+	"create_STV202406073__STAGING_transactions.sql",
+	"insert_STV202406073__DWH_global_metrics.sql".
+
+В папке "py" находятся функции необходимые для выполнения двух dags:
+	"load_func.py".
+
+В папке "img" находятся скриншот настроек AirFlow, а именно подключение к источнику - s3 и к потребителю - vertica. Скриншот переменных - variable. Скриншот дашборда.
