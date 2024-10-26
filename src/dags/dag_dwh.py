@@ -6,7 +6,6 @@ from py.load_func import loading_data_into_global_metrics
 @dag(
     schedule_interval="0 12 * * *",
     start_date=pendulum.parse("2022-10-02"),
-    #end_date=pendulum.parse("2022-11-01"),
     catchup=True,
    )
 def dwh_dag():
